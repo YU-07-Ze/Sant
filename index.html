@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>我的 AI 助手</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: system-ui, sans-serif; background: #f4f4f9; display: flex; flex-direction: column; height: 100vh; }
+    #chat-box { flex: 1; overflow-y: auto; padding: 15px; display: flex; flex-direction: column; gap: 10px; }
+    .msg { max-width: 85%; padding: 10px 12px; border-radius: 8px; font-size: 15px; word-break: break-word; }
+    .user { align-self: flex-end; background: #007bff; color: #fff; }
+    .ai { align-self: flex-start; background: #fff; color: #333; border: 1px solid #ddd; }
+    #controls { padding: 12px; background: #fff; border-top: 1px solid #eee; display: flex; flex-direction: column; gap: 8px; }
+    .input-row { display: flex; gap: 8px; }
+    input { flex: 1; padding: 10px; border: 1px solid #ccc; border-radius: 6px; font-size: 14px; }
+    button { padding: 10px 16px; background: #007bff; color: white; border: none; border-radius: 6px; font-weight: bold; }
+  </style>
+</head>
+<body>
+  <div id="chat-box"></div>
+  <div id="controls">
+    <div class="input-row">
+      <input type="password" id="api-key" placeholder="在此粘贴你的 DeepSeek/OpenAI API Key">
+    </div>
+    <div class="input-row">
+      <input type="text" id="user-input" placeholder="输入消息...">
+      <button onclick="sendMessage()">发送</button>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
